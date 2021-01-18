@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/DA0L/niwinneh/issues"
   },
-  "homepage": "https://github.com/DA0L/niwinneh#readme"
+  "homepage": "https://github.com/DA0L/niwinneh#readme",
+  "dependencies": {
+    "mineflayer": "^2.40.1"
+  }
 }

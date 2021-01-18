@@ -11,7 +11,6 @@
  * so be sure to teach him a few more tricks before leaving him alone at night.
  */
 const mineflayer = require('mineflayer')
-const vec3 = require('vec3')
 
 const bot = mineflayer.createBot({
     host: '168.119.141.28', // optional   

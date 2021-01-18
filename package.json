@@ -1,0 +1,19 @@
+{
+  "name": "258",
+  "version": "1.0.0",
+  "description": "",
+  "main": "kk.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DA0L/niwinneh.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DA0L/niwinneh/issues"
+  },
+  "homepage": "https://github.com/DA0L/niwinneh#readme"
+}

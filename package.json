@@ -1,7 +1,6 @@
 {
   "name": "258",
   "version": "1.0.0",
-  "description": "",
   "main": "kk.js",
   "scripts": {
     "start": "node kk.js"
@@ -18,5 +17,6 @@
   "homepage": "https://github.com/DA0L/niwinneh#readme",
   "dependencies": {
     "mineflayer": "^2.40.1"
-  }
+  },
+  "description": ""
 }

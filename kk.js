@@ -101,7 +101,7 @@ function tpani () {
 bot.once('spawn', () => {
     bot.chat('register xyvZy42 xyvZy42')
     bot.chat('login xyvZy42')
-    mineflayerViewer(bot, { port: 3007, firstPerson: true })
+    //mineflayerViewer(bot, { port: 3007, firstPerson: true })
     bot.autoEat.options = {
       priority: "foodPoints",
       startAt: 14,
@@ -110,7 +110,7 @@ bot.once('spawn', () => {
 
 })
 
-inventoryViewer(bot)
+//inventoryViewer(bot)
 
 //////////////////AUTOEAT////////////////////
 

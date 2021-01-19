@@ -4,8 +4,8 @@ const inventoryViewer = require('mineflayer-web-inventory')
 const autoeat = require("mineflayer-auto-eat")
 
 const bot = mineflayer.createBot({
-    host: 'localhost', // optional   
-    port: 56719,
+    host: '168.119.141.28', // optional   
+    port: 25551,
     username: "NiWinner",    // optional         // online-mode=true servers
     version: false,                 // false corresponds to auto version detection (that's the default), put for example "1.8.8" if you need a specific version
     auth: 'mojang' 

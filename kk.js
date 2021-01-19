@@ -3,6 +3,9 @@ const mineflayerViewer = require('prismarine-viewer').mineflayer
 const inventoryViewer = require('mineflayer-web-inventory')
 const autoeat = require("mineflayer-auto-eat")
 
+
+/////////////////////STORT/////////////////////////////////
+
 const bot = mineflayer.createBot({
     host: '168.119.141.28', // optional   
     port: 25551,
@@ -109,14 +112,16 @@ bot.once('spawn', () => {
 
 inventoryViewer(bot)
 
+//////////////////AUTOEAT////////////////////
+
 bot.loadPlugin(autoeat)
 
 bot.on("autoeat_started", () => {
-  bot.dashboard.log("Auto Eat started!")
+  console.log("Auto Eat started!")
 })
 
 bot.on("autoeat_stopped", () => {
-  bot.dashboard.log("Auto Eat stopped!")
+  console.log("Auto Eat stopped!")
 })
 
 bot.on("health", () => {
@@ -125,5 +130,11 @@ bot.on("health", () => {
   else bot.autoEat.enable() // Else enable the plugin again
 })
 
-bot.on("kicked", (reason, loggedIn) => bot.dashboard.log(reason, loggedIn))
-bot.on("error", err => bot.dashboard.timelog(err))
+
+
+
+
+///////////////////////ERRORLOG///////////////
+
+bot.on("kicked", (reason, loggedIn) => console.log(reason, loggedIn))
+bot.on("error", err => console.log(err))

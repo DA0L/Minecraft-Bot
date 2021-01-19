@@ -11,7 +11,9 @@
   },
   "author": "",
   "license": "ISC",
-  "node": "15.6.0",
+  "engines": {
+    "node": "15.6.0"
+  },
   "bugs": {
     "url": "https://github.com/DA0L/niwinneh/issues"
   },

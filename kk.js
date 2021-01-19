@@ -1,6 +1,6 @@
 const mineflayer = require('mineflayer')
-const mineflayerViewer = require('prismarine-viewer').mineflayer
-const inventoryViewer = require('mineflayer-web-inventory')
+//const mineflayerViewer = require('prismarine-viewer').mineflayer
+//const inventoryViewer = require('mineflayer-web-inventory')
 const autoeat = require("mineflayer-auto-eat")
 
 

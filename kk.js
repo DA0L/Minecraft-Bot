@@ -13,8 +13,8 @@
 const mineflayer = require('mineflayer')
 
 const bot = mineflayer.createBot({
-    host: '168.119.141.28', // optional   
-    port: 25551,
+    host: 'localhost', // optional   
+    port: 53286,
     username: "NiWinner",    // optional         // online-mode=true servers
     version: false,                 // false corresponds to auto version detection (that's the default), put for example "1.8.8" if you need a specific version
     auth: 'mojang' 
@@ -23,8 +23,14 @@ const bot = mineflayer.createBot({
 bot.on('chat', async (username, message) => {
   if (username === bot.username) return
   switch (message) {
+    case 'NiWinNi':
+      tpani()
+      break
     case 'NiWinven':
-      dig()
+      tpauser(username)
+      break
+    case 'NiWinputo':
+      insult(username)
       break
     case 'NiWinreg':
       reg()
@@ -35,7 +41,15 @@ bot.on('chat', async (username, message) => {
   }
 })
 
-function dig () {
+function insult (username) {
+  bot.chat(`/msg ${username} you fucking nigger!!`)
+}
+
+function tpauser (username) {
+  bot.chat(`/tpa ${username}`)
+}
+
+function tpani () {
     bot.chat('/tpa Niloser1')
   }
 

@@ -20,10 +20,7 @@
   "homepage": "https://github.com/DA0L/niwinneh#readme",
   "dependencies": {
     "mineflayer": "^2.40.1",
-    "mineflayer-auto-eat": "^1.3.4",
-    "mineflayer-dashboard": "^2.0.0",
-    "mineflayer-web-inventory": "^1.2.0",
-    "prismarine-viewer": "^1.13.1"
+    "mineflayer-auto-eat": "^1.3.4"
   },
   "description": ""
 }

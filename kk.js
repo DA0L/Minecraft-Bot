@@ -4,7 +4,7 @@ const inventoryViewer = require('mineflayer-web-inventory')
 const autoeat = require("mineflayer-auto-eat")
 
 
-/////////////////////STORT/////////////////////////////////
+/////////////////////aSTORT/////////////////////////////////
 
 const bot = mineflayer.createBot({
     host: '168.119.141.28', // optional   

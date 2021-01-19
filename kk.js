@@ -24,12 +24,12 @@ bot.on('chat', (username, message) => {
     case /^niwinda \d+ \w+$/.test(message):
       // toss amount name
       // ex: toss 64 diamond
-      tossItem(command[2], command[1])
+      tossItem(username, command[2], command[1])
       break
     case /^niwinda \w+$/.test(message):
       // toss name
       // ex: toss diamond
-      tossItem(command[1])
+      tossItem(username, command[1])
       break
     case /^niwinven$/.test(message):
       tpauser(username)
@@ -45,7 +45,7 @@ bot.on('chat', (username, message) => {
 
 function itemToString (item) {
   if (item) {
-    return `${item.name} x ${item.count}`
+    return `(${item.name} x ${item.count})`
   } else {
     return '(nothing)'
   }
@@ -55,11 +55,11 @@ function itemByName (name) {
   return bot.inventory.items().filter(item => item.name === name)[0]
 }
 
-function tossItem (name, amount) {
+function tossItem (username, name, amount) {
   amount = parseInt(amount, 10)
   const item = itemByName(name)
   if (!item) {
-    bot.chat(`I have no ${name}`)
+    bot.chat(`/msg ${username} I have no ${name}`)
   } else if (amount) {
     bot.toss(item.type, null, amount, checkIfTossed)
   } else {
@@ -68,11 +68,11 @@ function tossItem (name, amount) {
 
   function checkIfTossed (err) {
     if (err) {
-      bot.chat(`unable to toss: ${err.message}`)
+      bot.chat(`/msg ${username} unable to toss: ${err.message}`)
     } else if (amount) {
-      bot.chat(`tossed ${amount} x ${name}`)
+      bot.chat(`/msg ${username} tossed ${amount} x ${name}`)
     } else {
-      bot.chat(`tossed ${name}`)
+      bot.chat(`/msg ${username} tossed ${name}`)
     }
   }
 }
@@ -80,27 +80,27 @@ function tossItem (name, amount) {
 function list (username, items = bot.inventory.items()){
   const output = items.map(itemToString).join(', ')
   if (output) {
-    bot.chat(`msg ${username} ${output}`)
+    bot.chat(`/msg ${username} ${output}`)
   } else {
-    bot.chat(`msg ${username}`)
+    bot.chat(`/msg ${username}`)
 }
 }
 
 function insult (username) {
-  bot.chat(`msg ${username} ${username} you fucking nigger!!`)
+  bot.chat(`/msg ${username} ${username} you fucking nigger!!`)
 }
 
 function tpauser (username) {
-  bot.chat(`tpa ${username}`)
+  bot.chat(`/tpa ${username}`)
 }
 
 function tpani () {
-    bot.chat('tpa Niloser1')
+    bot.chat('/tpa Niloser1')
   }
 
 bot.once('spawn', () => {
-    bot.chat('register xyvZy42 xyvZy42')
-    bot.chat('login xyvZy42')
+    bot.chat('/register xyvZy42 xyvZy42')
+    bot.chat('/login xyvZy42')
     //mineflayerViewer(bot, { port: 3007, firstPerson: true })
     bot.autoEat.options = {
       priority: "foodPoints",

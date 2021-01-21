@@ -50,6 +50,7 @@ function itemToString (item) {
 }
 
 bot.on('message', msg => console.log(msg.toString()))
+bot.on('message', msg => console.log(msg.toString().split("▶")[1]))
 
 function itemByName (name) {
   return bot.inventory.items().filter(item => item.name === name)[0]

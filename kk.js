@@ -98,6 +98,7 @@ function tpani () {
 
 bot.once('spawn', () => {
     bot.chat('/login xyvZy42')
+    bot.chat('Dame comida')
     bot.autoEat.options = {
       priority: "foodPoints",
       startAt: 14,

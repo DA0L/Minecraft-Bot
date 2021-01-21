@@ -14,10 +14,11 @@ const bot = mineflayer.createBot({
 
 bot.on('message', function(msg) {
   const str = msg.toString()
-  const [completeMsg, username, message] = str.match(/【(.*)】(.*) ▶ (.*)/) || [str];
+  const [completeMsg, guild, username, message] = str.match(/【(.*)】(.*) ▶ (.*)/) || [str];
   if (username && message) bot.emit("chat", username, message)
   console.log("jj")
   console.log(completeMsg)
+  console.log(guild)
   console.log(username)
   console.log(message)
   console.log("jj")

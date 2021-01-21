@@ -16,6 +16,7 @@ bot.on('message', function(msg) {
   const str = msg.toString();
   const [completeMsg, username, message] = str.match(/(.*) ▶ (.*)/) || [str];
   if (username && message) bot.emit("chat", username, message)
+  message = message.split("】")
   console.log("jj")
   console.log(completeMsg)
   console.log(username)

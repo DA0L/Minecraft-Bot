@@ -25,7 +25,7 @@ bot.on('message', function(msg) {
 
 bot.on('chat', (username, message, type, rawMessage, matches) => {
   if (username === "Rewards"){
-    break
+    pass
   }
   console.log(username)
   console.log(type)

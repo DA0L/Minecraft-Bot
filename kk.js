@@ -26,8 +26,10 @@ bot.on('message', function(msg) {
 bot.on('chat', (username, message, type, rawMessage, matches) => {
   console.log(username)
   console.log(type)
+  if (type != "Rewards") {
+    const command = type.split(" ")
+  }
   if (username === bot.username) return
-  const command = type.split(" ")
   ded = username.split("】")
   switch (true) {
     case /niwinlist$/.test(type):

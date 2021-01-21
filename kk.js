@@ -12,9 +12,18 @@ const bot = mineflayer.createBot({
     auth: 'mojang' 
 })
 
-bot.on('chat', (username, message) => {
+bot.on('message', function(msg) {
+  const str = msg.toString();
+  const [completeMsg, username, message] = str.match(/(.*) ▶ (.*)/) || [str];
+  if (username && message) bot.emit("chat", username, message)
+  console.log("jj")
+  console.log(completeMsg)
   console.log(username)
-  console.log("kiel")
+  console.log(message)
+  console.log("jj")
+});
+
+bot.on('chat', (username, message) => {
   if (username === bot.username) return
   switch (true) {
     case /niwinlist$/.test(message):
@@ -50,8 +59,8 @@ function itemToString (item) {
   }
 }
 
-bot.on('message', msg => console.log(msg.toString().split("▶")[1])) // msg
-bot.on('message', msg => console.log(msg.toString().split("】")[1].split("▶"))) // user
+//bot.on('message', msg => console.log(msg.toString().split("▶")[1])) // msg
+//bot.on('message', msg => console.log(msg.toString().split("】")[1].split("▶"))) // user
 
 function itemByName (name) {
   return bot.inventory.items().filter(item => item.name === name)[0]

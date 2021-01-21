@@ -12,9 +12,6 @@ const bot = mineflayer.createBot({
     auth: 'mojang' 
 })
 
-bot.chatAddPattern(/^(【(.*)】*)?(.*) ▶ (.*)$/)
-bot.chatAddPattern(/^\[ ?([^ ]*) -> me ?] (.*)$/, 'whisper', 'whisper')
-
 bot.on('message', function(msg) {
   const str = msg.toString()
   // const [completeMsg, guild, username, message] = str.match(/【(.*)】(.*) ▶ (.*)/) || [str]
@@ -122,8 +119,8 @@ function tpani () {
 
 bot.once('spawn', () => {
     bot.chat('/login xyvZy42')
-    bot.chatAddPattern(/^【(.*)】(.*) ▶ (.*)$/, 'chat', 'Anotat chat')
-    bot.chatAddPattern(/^[(.*) -> me] (.*)$/, 'whisper', 'Anotat whisper')
+    bot.chatAddPattern(/^(【(.*)】*)?(.*) ▶ (.*)$/, 'chat', 'chat')
+bot.chatAddPattern(/^\[ ?([^ ]*) -> me ?] (.*)$/, 'whisper', 'whisper')
     bot.autoEat.options = {
       priority: "foodPoints",
       startAt: 14,

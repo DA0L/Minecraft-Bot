@@ -120,8 +120,8 @@ function tpani () {
 
 bot.once('spawn', () => {
     bot.chat('/login xyvZy42')
-    bot.chatAddPattern(/^(【(.*)】*)?(.*) ▶ (.*)$/, 'chat', 'chat')
-bot.chatAddPattern(/^\[ ?([^ ]*) -> me ?] (.*)$/, 'whisper', 'whisper')
+    bot.chatAddPattern(/^(.*)?(.*) ▶ (.*)$/, 'chat', 'chat')
+    bot.chatAddPattern(/^\[ ?([^ ]*) -> me ?] (.*)$/, 'whisper', 'whisper')
     bot.autoEat.options = {
       priority: "foodPoints",
       startAt: 14,

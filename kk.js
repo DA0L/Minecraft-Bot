@@ -31,9 +31,6 @@ bot.on('message', function(msg) {
 })
 */
 
-bot.chatAddPattern(/^【(.*)】(.*) ▶ (.*)$/, 'chat', 'Anotat chat')
-bot.chatAddPattern(/^\[ ?([^ ]*) -> me ?] (.*)$/, 'whisper', 'Anotat whisper')
-
 bot.on('chat', (guild, username, message) => {
   if (username === bot.username) return
   const command = message.split(" ")
@@ -162,6 +159,8 @@ function tpani () {
 
 bot.once('spawn', () => {
     bot.chat('/login xyvZy42')
+    bot.chatAddPattern(/^【(.*)】(.*) ▶ (.*)$/, 'chat', 'Anotat chat')
+    bot.chatAddPattern(/^\[ ?([^ ]*) -> me ?] (.*)$/, 'whisper', 'Anotat whisper')
     bot.autoEat.options = {
       priority: "foodPoints",
       startAt: 14,

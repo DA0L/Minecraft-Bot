@@ -26,6 +26,7 @@ bot.on('message', function(msg) {
 
 bot.on('chat', (username, message) => {
   if (username === bot.username) return
+  const command = message.split(" ")
   switch (true) {
     case /niwinlist$/.test(message):
       list(username)

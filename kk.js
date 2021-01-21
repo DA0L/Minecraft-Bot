@@ -26,7 +26,7 @@ bot.on('message', function(msg) {
 bot.on('chat', (username, message, type, rawMessage, matches) => {
   console.log(username)
   console.log(type)
-  if (username !== "Rewards") {
+  if (type !== undefined) {
     const command = type.split(" ")
   }
   if (username === bot.username) return

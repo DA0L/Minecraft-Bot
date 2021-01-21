@@ -24,37 +24,35 @@ bot.on('message', function(msg) {
 */
 
 bot.on('chat', (username, message, type, rawMessage, matches) => {
-  console.log(rawMessage)
   console.log(username)
-  console.log(message)
   console.log(type)
   if (username === bot.username) return
-  //const command = message.split(" ")
+  const type = message.split(" ")
   username = username.split("】")
   switch (true) {
-    case /niwinlist$/.test(message):
+    case /niwinlist$/.test(type):
       list(username[1])
       break
-    case /^niwinda \d+ \w+$/.test(message):
+    case /^niwinda \d+ \w+$/.test(type):
       // toss amount name
       // ex: toss 64 diamond
       tossItem(username[1], command[2], command[1])
       break
-    case /^niwinda \w+$/.test(message):
+    case /^niwinda \w+$/.test(type):
       // toss name
       // ex: toss diamond
       tossItem(username[1], command[1])
       break
-    case /^niwinven$/.test(message):
+    case /^niwinven$/.test(type):
       tpauser(username[1])
       break
-    case /^niwinputo$/.test(message):
+    case /^niwinputo$/.test(type):
       insult(username[1])
       break
-    case /^niwinni$/.test(message):
+    case /^niwinni$/.test(type):
       tpani()
       break
-    case /^niwinhelp$/.test(message):
+    case /^niwinhelp$/.test(type):
       help(username[1])
       break
   }

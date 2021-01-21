@@ -28,35 +28,35 @@ bot.on('chat', (username, message, type, rawMessage, matches) => {
   console.log(type)
   if (type !== undefined) {
     const command = type.split(" ")
-  }
-  if (username === bot.username) return
-  ded = username.split("】")
-  switch (true) {
-    case /niwinlist$/.test(type):
-      list(ded[1])
-      break
-    case /^niwinda \d+ \w+$/.test(type):
-      // toss amount name
-      // ex: toss 64 diamond
-      tossItem(ded[1], command[2], command[1])
-      break
-    case /^niwinda \w+$/.test(type):
-      // toss name
-      // ex: toss diamond
-      tossItem(ded[1], command[1])
-      break
-    case /^niwinven$/.test(type):
-      tpauser(ded[1])
-      break
-    case /^niwinputo$/.test(type):
-      insult(ded[1])
-      break
-    case /^niwinni$/.test(type):
-      tpani()
-      break
-    case /^niwinhelp$/.test(type):
-      help(ded[1])
-      break
+    if (username === bot.username) return
+    ded = username.split("】")
+    switch (true) {
+      case /niwinlist$/.test(type):
+        list(ded[1])
+        break
+      case /^niwinda \d+ \w+$/.test(type):
+        // toss amount name
+        // ex: toss 64 diamond
+        tossItem(ded[1], command[2], command[1])
+        break
+      case /^niwinda \w+$/.test(type):
+        // toss name
+        // ex: toss diamond
+        tossItem(ded[1], command[1])
+        break
+      case /^niwinven$/.test(type):
+        tpauser(ded[1])
+        break
+      case /^niwinputo$/.test(type):
+        insult(ded[1])
+        break
+      case /^niwinni$/.test(type):
+        tpani()
+        break
+      case /^niwinhelp$/.test(type):
+        help(ded[1])
+        break
+    }
   }
 })
 

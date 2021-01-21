@@ -12,6 +12,7 @@ const bot = mineflayer.createBot({
     auth: 'mojang' 
 })
 
+/*
 bot.on('message', function(msg) {
   const str = msg.toString()
   const [completeMsg, guild, username, message] = str.match(/【(.*)】(.*) ▶ (.*)/) || [str];
@@ -27,9 +28,45 @@ bot.on('message', function(msg) {
   console.log(guild)
   console.log(username)
   console.log(message)
-});
+})
+*/
 
-bot.on('chat', (username, message) => {
+bot.chatAddPattern(/^【(.*)】(.*) ▶ (.*)$/, 'chat', 'Anotat chat')
+bot.chatAddPattern(/^\[ ?([^ ]*) -> me ?] (.*)$/, 'whisper', 'Anotat whisper')
+
+bot.on('chat', (guild, username, message) => {
+  if (username === bot.username) return
+  const command = message.split(" ")
+  switch (true) {
+    case /niwinlist$/.test(message):
+      list(username)
+      break
+    case /^niwinda \d+ \w+$/.test(message):
+      // toss amount name
+      // ex: toss 64 diamond
+      tossItem(username, command[2], command[1])
+      break
+    case /^niwinda \w+$/.test(message):
+      // toss name
+      // ex: toss diamond
+      tossItem(username, command[1])
+      break
+    case /^niwinven$/.test(message):
+      tpauser(username)
+      break
+    case /^niwinputo$/.test(message):
+      insult(username)
+      break
+    case /^niwinni$/.test(message):
+      tpani()
+      break
+    case /^niwinhelp$/.test(message):
+      help(username)
+      break
+  }
+})
+
+bot.on('whisper', (username, message) => {
   if (username === bot.username) return
   const command = message.split(" ")
   switch (true) {

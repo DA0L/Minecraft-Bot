@@ -22,7 +22,7 @@ bot.on('message', function(msg) {
   console.log(message)
 })
 
-bot.on('chat', (guild, username, message) => {
+bot.on('chat', (username, message) => {
   console.log(message)
   if (username === bot.username) return
   const command = message.split(" ")

@@ -28,32 +28,32 @@ bot.on('chat', (username, message, type, rawMessage, matches) => {
   console.log(type)
   if (username === bot.username) return
   //const command = type.split(" ")
-  username = username.split("】")
+  ded = username.split("】")
   switch (true) {
     case /niwinlist$/.test(type):
-      list(username[1])
+      list(ded[1])
       break
     case /^niwinda \d+ \w+$/.test(type):
       // toss amount name
       // ex: toss 64 diamond
-      tossItem(username[1], command[2], command[1])
+      tossItem(ded[1], command[2], command[1])
       break
     case /^niwinda \w+$/.test(type):
       // toss name
       // ex: toss diamond
-      tossItem(username[1], command[1])
+      tossItem(ded[1], command[1])
       break
     case /^niwinven$/.test(type):
-      tpauser(username[1])
+      tpauser(ded[1])
       break
     case /^niwinputo$/.test(type):
-      insult(username[1])
+      insult(ded[1])
       break
     case /^niwinni$/.test(type):
       tpani()
       break
     case /^niwinhelp$/.test(type):
-      help(username[1])
+      help(ded[1])
       break
   }
 })

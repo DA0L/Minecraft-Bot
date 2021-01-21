@@ -15,6 +15,13 @@ const bot = mineflayer.createBot({
 bot.on('message', function(msg) {
   const str = msg.toString()
   const [completeMsg, guild, username, message] = str.match(/【(.*)】(.*) ▶ (.*)/) || [str];
+  if (guild === undefined) {
+    const [completeMsg, username, message] = str.match(/[(.*) -> me] (.*)/) || [str];
+    if (username && message) bot.emit("chat", username, message)
+    console.log(completeMsg)
+    console.log(username)
+    console.log(message)
+  }
   if (username && message) bot.emit("chat", username, message)
   console.log(completeMsg)
   console.log(guild)
@@ -55,8 +62,7 @@ bot.on('chat', (username, message) => {
 })
 
 function help (username) {
-  bot.chat(`/msg ${username} My commands are:
-  niwinlist for seeing my inventory
+  bot.chat(`/msg ${username} My commands are: niwinlist for seeing my inventory
   niwinda amount name for tossing a number of items/all copies of that item
   niwinven for me to tpa to user
   niwinputo for being insulted

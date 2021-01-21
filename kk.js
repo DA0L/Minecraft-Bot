@@ -33,8 +33,9 @@ bot.on('message', function(msg) {
 
 bot.on('chat', (guild, username, message) => {
   console.log(message)
+  msg = message
   if (username === bot.username) return
-  const command = message.split(" ")
+  const command = msg.split(" ")
   switch (true) {
     case /niwinlist$/.test(message):
       list(username)
@@ -65,9 +66,9 @@ bot.on('chat', (guild, username, message) => {
 })
 
 bot.on('whisper', (username, message) => {
-  console.log(message)
+  msg = message
   if (username === bot.username) return
-  const command = message.split(" ")
+  const command = msg.split(" ")
   switch (true) {
     case /niwinlist$/.test(message):
       list(username)

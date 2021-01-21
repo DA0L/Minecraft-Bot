@@ -24,6 +24,9 @@ bot.on('message', function(msg) {
 */
 
 bot.on('chat', (username, message, type, rawMessage, matches) => {
+  if (username === "Rewards"){
+    break
+  }
   console.log(username)
   console.log(type)
   if (username === bot.username) return

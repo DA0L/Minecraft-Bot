@@ -18,7 +18,6 @@ bot.on('message', function(msg) {
   const [completeMsg, username, message] = str.match(/[(.*) -> me] (.*)/) || [str]
   if (username && message) bot.emit("chat", username, message)
   console.log(completeMsg)
-  console.log(guild)
   console.log(username)
   console.log(message)
 })

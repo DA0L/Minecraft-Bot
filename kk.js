@@ -11,7 +11,7 @@ const bot = mineflayer.createBot({
     version: false,                 // false corresponds to auto version detection (that's the default), put for example "1.8.8" if you need a specific version
     auth: 'mojang' 
 })
-
+/*
 bot.on('message', function(msg) {
   const str = msg.toString()
   // const [completeMsg, guild, username, message] = str.match(/【(.*)】(.*) ▶ (.*)/) || [str]
@@ -21,6 +21,7 @@ bot.on('message', function(msg) {
   console.log(username)
   console.log(message)
 })
+*/
 
 bot.on('chat', (username, message) => {
   console.log(message)

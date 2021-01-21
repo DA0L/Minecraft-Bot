@@ -32,6 +32,7 @@ bot.on('message', function(msg) {
 */
 
 bot.on('chat', (username, message) => {
+  console.log(message)
   if (username === bot.username) return
   const command = message.split(" ")
   switch (true) {
@@ -64,6 +65,7 @@ bot.on('chat', (username, message) => {
 })
 
 bot.on('whisper', (username, message) => {
+  console.log(message)
   if (username === bot.username) return
   const command = message.split(" ")
   switch (true) {
@@ -160,7 +162,7 @@ function tpani () {
 bot.once('spawn', () => {
     bot.chat('/login xyvZy42')
     bot.chatAddPattern(/^【(.*)】(.*) ▶ (.*)$/, 'chat', 'Anotat chat')
-    bot.chatAddPattern(/^\[ ?([^ ]*) -> me ?] (.*)$/, 'whisper', 'Anotat whisper')
+    bot.chatAddPattern(/^[(.*) -> me] (.*)$/, 'whisper', 'Anotat whisper')
     bot.autoEat.options = {
       priority: "foodPoints",
       startAt: 14,

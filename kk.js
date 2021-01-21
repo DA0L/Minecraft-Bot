@@ -13,8 +13,9 @@ const bot = mineflayer.createBot({
 })
 
 bot.on('chat', (username, message) => {
+  console.log(username)
+  console.log("kiel")
   if (username === bot.username) return
-  const command = message.split(' ')
   switch (true) {
     case /niwinlist$/.test(message):
       list(username)
@@ -49,9 +50,8 @@ function itemToString (item) {
   }
 }
 
-bot.on('message', msg => console.log(msg.toString()))
-bot.on('message', msg => console.log(msg.toString().split("▶")[1]))
-bot.on('message', msg => console.log(msg.toString().split("▶")[0].split("】")[1]))
+bot.on('message', msg => console.log(msg.toString().split("▶")[1])) // msg
+bot.on('message', msg => console.log(msg.toString().split("】")[1].split("▶"))) // user
 
 function itemByName (name) {
   return bot.inventory.items().filter(item => item.name === name)[0]
@@ -102,7 +102,6 @@ function tpani () {
 
 bot.once('spawn', () => {
     bot.chat('/login xyvZy42')
-    bot.chat('Dame comida')
     bot.autoEat.options = {
       priority: "foodPoints",
       startAt: 14,

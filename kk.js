@@ -31,7 +31,7 @@ bot.on('message', function(msg) {
 })
 */
 
-bot.on('chat', (guild, username, message) => {
+bot.on('chat', (username, message) => {
   if (username === bot.username) return
   const command = message.split(" ")
   switch (true) {

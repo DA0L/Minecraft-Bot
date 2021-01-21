@@ -12,6 +12,9 @@ const bot = mineflayer.createBot({
     auth: 'mojang' 
 })
 
+bot.chatAddPattern(/^?【(.*)】(.*) ▶ (.*)$/)
+bot.chatAddPattern(/^\[ ?([^ ]*) -> me ?] (.*)$/, 'whisper', 'whisper')
+
 bot.on('message', function(msg) {
   const str = msg.toString()
   // const [completeMsg, guild, username, message] = str.match(/【(.*)】(.*) ▶ (.*)/) || [str]

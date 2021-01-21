@@ -62,12 +62,7 @@ bot.on('chat', (username, message) => {
 })
 
 function help (username) {
-  bot.chat(`/msg ${username} My commands are: niwinlist for seeing my inventory
-  niwinda amount name for tossing a number of items/all copies of that item
-  niwinven for me to tpa to user
-  niwinputo for being insulted
-  niwinni for me to tpa to nil
-  niwinhelp for displaying commands`)
+  bot.chat(`/msg ${username} My commands are: niwinlist for seeing my inventory        niwinda amount name for tossing a number of items/all copies of that item       niwinven for me to tpa to user        niwinputo for being insulted     niwinni for me to tpa to nil     niwinhelp for displaying commands`)
 }
 
 function itemToString (item) {

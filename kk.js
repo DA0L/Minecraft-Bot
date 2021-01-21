@@ -49,7 +49,7 @@ function itemToString (item) {
   }
 }
 
-bot.on('message', console.log)
+bot.on('message', msg => console.log(msg.toString()))
 
 function itemByName (name) {
   return bot.inventory.items().filter(item => item.name === name)[0]

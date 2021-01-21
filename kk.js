@@ -16,12 +16,10 @@ bot.on('message', function(msg) {
   const str = msg.toString()
   const [completeMsg, guild, username, message] = str.match(/【(.*)】(.*) ▶ (.*)/) || [str];
   if (username && message) bot.emit("chat", username, message)
-  console.log("jj")
   console.log(completeMsg)
   console.log(guild)
   console.log(username)
   console.log(message)
-  console.log("jj")
 });
 
 bot.on('chat', (username, message) => {
@@ -50,8 +48,21 @@ bot.on('chat', (username, message) => {
     case /^niwinni$/.test(message):
       tpani()
       break
+    case /^niwinhelp$/.test(message):
+      help(username)
+      break
   }
 })
+
+function help (username) {
+  bot.chat(`/msg ${username} My commands are:
+  niwinlist for seeing my inventory
+  niwinda amount name for tossing a number of items/all copies of that item
+  niwinven for me to tpa to user
+  niwinputo for being insulted
+  niwinni for me to tpa to nil
+  niwinhelp for displaying commands`)
+}
 
 function itemToString (item) {
   if (item) {

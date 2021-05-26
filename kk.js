@@ -5,10 +5,10 @@ const autoeat = require("mineflayer-auto-eat")
 /////////////////////aSTORT/////////////////////////////////
 
 const bot = mineflayer.createBot({
-    host: '168.119.141.28', // optional   
-    port: 25551,
-    username: "NiWinner",    // optional         // online-mode=true servers
-    version: false,                 // false corresponds to auto version detection (that's the default), put for example "1.8.8" if you need a specific version
+    host: '<IP>', // optional   
+    port: <Port>, // Integers, don't input text
+    username: "<Name>",    // optional
+    version: false,        // false corresponds to auto version detection (that's the default), put for example "1.8.8" if you need a specific version
     auth: 'mojang' 
 })
 /*
@@ -29,19 +29,19 @@ bot.on('chat', (username, message, type, rawMessage, matches) => {
   if (type !== undefined) {
     const command = type.split(" ")
     if (username === bot.username) return
-    ded = username.split("】")
+    ded = username.split("】") //】user 】
     switch (true) {
       case /niwinlist$/.test(type):
         list(ded[1])
         break
       case /^niwinda \d+ \w+$/.test(type):
         // toss amount name
-        // ex: toss 64 diamond
+        // ex: niwinda 64 diamond
         tossItem(ded[1], command[2], command[1])
         break
       case /^niwinda \w+$/.test(type):
-        // toss name
-        // ex: toss diamond
+        // toss something
+        // ex: niwinda diamond
         tossItem(ded[1], command[1])
         break
       case /^niwinven$/.test(type):
